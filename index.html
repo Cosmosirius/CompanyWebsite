@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMKN 7 Semarang</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f7f9fc;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        background: url("img/20241023_073344.jpg") no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        padding-bottom: 80px;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .logo {
+        font-size: 1.8em;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #ffe100;
+      }
+
+      .hero {
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+
+      .btn-primary {
+        background-color: #ffe100;
+        color: #1a1a1a;
+        padding: 12px 25px;
+        border: none;
+        font-weight: bold;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #ffd000;
+        transform: scale(1.05);
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .section-tittle,
+      .testimoni-title,
+      .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #1a2a6c;
+        margin-bottom: 30px;
+      }
+
+      .about-content {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        color: #444;
+      }
+
+      .jurusan-grid {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .jurusan-card {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        width: 250px;
+        text-align: center;
+      }
+
+      .icon {
+        font-size: 40px;
+        margin-bottom: 10px;
+        color: #fdbb2d;
+      }
+
+      .lookbook-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .lookbook-item {
+        background: #fff;
+        padding: 15px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .lookbook-item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        background-color: #eee;
+      }
+
+      .testimonial-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .testimonial {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        font-style: italic;
+      }
+
+      .testimonial-author {
+        margin-top: 10px;
+        font-weight: bold;
+        color: #1a2a6c;
+      }
+
+      .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+      }
+
+      .btn-submit {
+        padding: 12px;
+        background-color: #1a2a6c;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-submit:hover {
+        background-color: #3345b2;
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      footer {
+        background-color: #1a2a6c;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container navbar">
+        <div class="logo">SMKN 7 SEMARANG</div>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#jurusan">Jurusan</a></li>
+            <li><a href="#more">More</a></li>
+            <li><a href="#lookbook">Lookbook</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <section class="hero">
+        <div class="hero-content">
+          <h1>SMKN 7 SEMARANG</h1>
+          <p>
+            Mari belajar dan berkembang di lingkungan yang kreatif dan
+            produktif.
+          </p>
+          <button class="btn-primary">Get in Touch</button>
+        </div>
+      </section>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-tittle">Tentang Sekolah</h2>
+        <p class="about-content">
+          SMK Negeri 7 Semarang adalah sekolah menengah kejuruan yang berada di
+          Semarang, Jawa Tengah, Indonesia. Diresmikan pada tanggal 7 Juni 1971
+          oleh Presiden Republik Indonesia yaitu Soeharto, dengan nama Proyek
+          Perintis Sekolah Teknologi Menengah Pembangunan Semarang dengan lama
+          pendidikan 4 (empat) tahun. Pada tahun 1986 nama sekolah berubah
+          menjadi Sekolah Teknologi Menengah Pembangunan Semarang dan pada tahun
+          1995 berubah menjadi Sekolah Menengah Kejuruan Negeri 7 Semarang.
+        </p>
+      </div>
+    </section>
+
+    <section id="jurusan">
+      <div class="container">
+        <h2 class="section-tittle">Jurusan Unggulan</h2>
+        <div class="jurusan-grid">
+          <div class="jurusan-card">
+            <div class="icon">💻</div>
+            <h3>PENGEMBANGAN PERANGKAT LUNAK DAN GIM</h3>
+            <p>
+              Fokus pada pembuatan aplikasi dan game modern berbasis komputer
+              dan mobile.
+            </p>
+          </div>
+          <div class="jurusan-card">
+            <div class="icon">🏗️</div>
+            <h3>KONSTRUKSI & PERAWATAN BANGUNAN SIPIL</h3>
+            <p>Mempelajari pembangunan dan pemeliharaan infrastruktur sipil.</p>
+          </div>
+          <div class="jurusan-card">
+            <div class="icon">📡</div>
+            <h3>TEKNIK ELEKTRONIKA KOMUNIKASI</h3>
+            <p>
+              Mempelajari sistem komunikasi, perangkat, dan transmisi data
+              modern.
+            </p>
+          </div>
+          <div class="jurusan-card">
+            <div class="icon">⚙️</div>
+            <h3>FABRIKASI LOGAM & MANUFAKTUR</h3>
+            <p>
+              Membekali siswa dengan keahlian teknik pemrosesan logam dan
+              permesinan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lookbook">
+      <div class="container">
+        <h2 class="section-tittle">Galeri Kegiatan</h2>
+        <div class="lookbook-grid">
+          <div class="lookbook-item">
+            <img
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGEEujvE1UQu7GNe5roVKO5CcluTtJMimJJy3hRqEGPaa9ZDqQD9wNa0PbRibP-BAJ6PiwocD_rs6PhnnARqgZkCvt6Ix871dzN0jLwCdk-0zFOdAO0KXC4L_S9WSdyGZRU1s85Qb51v8IqGSdhIcy3J3mf4aejOmCuSevkizD8UhvCcv1-eS2bo6NDZQ/s1280/thumbnail.jpg"
+              alt="Kegiatan 1"
+            />
+            <p>Dies Natalis</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimoni">
+      <div class="container">
+        <h2 class="section-tittle">Testimoni Alumni</h2>
+        <div class="testimonial-container">
+          <div class="testimonial">
+            "SMKN 7 Semarang memberikan bekal ilmu dan karakter kerja yang
+            sangat berguna di dunia industri."
+            <div class="testimonial-author">- Dwi Andini, Alumni 2022</div>
+          </div>
+          <div class="testimonial">
+            "Lingkungan belajar yang mendukung dan guru yang kompeten membuat
+            saya siap menghadapi dunia kerja."
+            <div class="testimonial-author">- Rian Setiawan, Alumni 2021</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-tittle">Hubungi Kami</h2>
+        <form class="contact-form">
+          <input type="text" placeholder="Nama Anda" required />
+          <input type="email" placeholder="Email" required />
+          <textarea rows="5" placeholder="Pesan Anda" required></textarea>
+          <button class="btn-submit">Kirim</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 SMKN 7 Semarang. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
